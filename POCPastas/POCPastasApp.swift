@@ -9,9 +9,17 @@ import SwiftUI
 
 @main
 struct POCPastasApp: App {
+    
+    @StateObject var vm = ViewModel()
+    
+    //CoreData
+    @StateObject var dataController = DataController()
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(context: dataController.container.viewContext)
+                .environmentObject(vm)
+                .environment(\.managedObjectContext, dataController.container.viewContext)
         }
     }
 }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ArquivoPDF" representedClassName="ArquivoPDF" syncable="YES" codeGenerationType="class">
+        <attribute name="conteudo" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Pasta2" representedClassName="Pasta2" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="nome" optional="YES" attributeType="String"/>
+        <relationship name="arquivosPDF" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ArquivoPDF"/>
+        <relationship name="pastas" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pasta2" inverseName="pastas" inverseEntity="Pasta2"/>
+    </entity>
+</model>
