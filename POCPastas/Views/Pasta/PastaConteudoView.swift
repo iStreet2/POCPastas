@@ -128,7 +128,6 @@ struct PastaConteudoView: View {
         
         openPanel.begin { response in
             if response == .OK, let url = openPanel.url {
-                print("Selected URL: \(url)") // Adicionado para depuração
                 do {
                     let data = try Data(contentsOf: url)
                     let nome = url.lastPathComponent

@@ -9,6 +9,8 @@
 import Foundation
 import CoreData
 
+//Nessa classe eu pedi ajuda ao ChatGPT por não encontrar especifícamente o que eu queria, e ele me explicou como funciona essas relações e como implementar essas funções
+
 @objc(Pasta2)
 public class Pasta2: NSManagedObject {
 

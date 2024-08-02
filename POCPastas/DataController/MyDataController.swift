@@ -62,6 +62,19 @@ class MyDataController: ObservableObject {
         saveContext()
     }
     
+    func deletePDF(pastaPai: Pasta2, arquivoPDF: ArquivoPDF) {
+        pastaPai.removeFromArquivosPDF(arquivoPDF)
+        saveContext()
+        context.delete(arquivoPDF)
+        saveContext()
+    }
+    
+    func deletePasta(pastaPai: Pasta2, pasta: Pasta2) {
+        pastaPai.removeFromPastas(pasta)
+        context.delete(pasta)
+        saveContext()
+    }
+    
     func saveContext() {
         do{
             try context.save()
