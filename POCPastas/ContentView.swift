@@ -37,19 +37,12 @@ struct ContentView: View {
                     }
                 }
                 .padding()
-                //.frame(height: 20)
-                
                 
                 //Se houver uma pasta aberta
                 if let pastaAberta = vm.pastaAberta {
                     PastaConteudoView(pasta: pastaAberta, context: context)
                 }
-                
-                //Se houver um arquivo aberto
-                //if let arquivoAberto = vm.arquivoAberto {
-                //    ArquivoConteudoView(arquivo: arquivoAberto)
-                //}
-                
+            
                 Button {
                     self.myDataController.apagarTodosOsItens()
                 } label: {
