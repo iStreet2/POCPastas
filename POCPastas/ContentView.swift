@@ -15,6 +15,7 @@ struct ContentView: View {
     @Environment(\.managedObjectContext) var context //Contexto, DataController
     @ObservedObject var myDataController: MyDataController
     @FetchRequest(sortDescriptors: []) var arquivos: FetchedResults<ArquivoPDF>
+    @FetchRequest(sortDescriptors: []) var pastas: FetchedResults<Pasta2>
     
     
     init(context: NSManagedObjectContext) {
@@ -23,9 +24,7 @@ struct ContentView: View {
     
     
     var body: some View {
-        
         ZStack {
-            
             VStack{
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack{
@@ -47,9 +46,23 @@ struct ContentView: View {
                 }
                 
                 //Se houver um arquivo aberto
-                if let arquivoAberto = vm.arquivoAberto {
-                    ArquivoConteudoView(arquivo: arquivoAberto)
+                //if let arquivoAberto = vm.arquivoAberto {
+                //    ArquivoConteudoView(arquivo: arquivoAberto)
+                //}
+                
+                Button {
+                    self.myDataController.apagarTodosOsItens()
+                } label: {
+                    Text("Apagar tudo!")
                 }
+            }
+        }
+        .onAppear {
+            if pastas[0].id == "raiz" {
+                let pastaRaiz = pastas[0]
+                vm.pastaAberta = pastaRaiz
+                vm.caminho.push(pastaRaiz)
+                
             }
         }
     }

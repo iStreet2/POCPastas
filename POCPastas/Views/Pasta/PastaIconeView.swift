@@ -9,17 +9,20 @@ import SwiftUI
 
 struct PastaIconeView: View {
     
-    var pasta: Pasta
+    //var pasta: Pasta
+    var pasta: Pasta2
     
     var body: some View {
         VStack{
             Image(systemName: "folder")
                 .font(.system(size: 70))
+            //Text(pasta.nome)
             Text(pasta.nome)
+                .lineLimit(2)
         }
     }
 }
 
-#Preview {
-    PastaIconeView(pasta: Pasta(nome: "Testes"))
-}
+//#Preview {
+//    PastaIconeView(pasta: Pasta(nome: "Testes"))
+//}

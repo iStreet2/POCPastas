@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+//Nem vou usar mais, ja tenho o ShowPDFView
 struct ArquivoConteudoView: View {
     
     @EnvironmentObject var vm: ViewModel

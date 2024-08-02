@@ -10,8 +10,9 @@ import SwiftUI
 
 class ViewModel: ObservableObject {
     
-    @Published public var arquivoAberto: Arquivo? = nil
-    @Published public var pastaAberta: Pasta? = Pasta()
+    @Published public var arquivoAberto: ArquivoPDF?
+    //@Published public var pastaAberta: Pasta? = Pasta()
+    @Published public var pastaAberta: Pasta2?
     @Published public var caminho = Pilha()
     
     init() {
@@ -22,7 +23,7 @@ class ViewModel: ObservableObject {
     }
     
     
-    func abrirPasta(pasta: Pasta) {
+    func abrirPasta(pasta: Pasta2) {
         withAnimation(.easeIn(duration: 0.1)) {
             //A pasta que o usuário abriu vira a pasta aberta
             self.pastaAberta = pasta
@@ -32,7 +33,7 @@ class ViewModel: ObservableObject {
         }
     }
     
-    func abrirArquivo(arquivo: Arquivo) {
+    func abrirArquivo(arquivo: ArquivoPDF) {
         withAnimation(.easeIn(duration: 0.1)) {
             //Pasta aberta recebe nil pois não há nenhuma pasta aberta
             self.pastaAberta = nil

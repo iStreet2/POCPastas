@@ -13,32 +13,36 @@ import UniformTypeIdentifiers
 struct PastaConteudoView: View {
     
     @EnvironmentObject var vm: ViewModel
-    
     @State var selecionado = false
     @State var arquivoSelecionado: ArquivoPDF?
     @State var showPDF = false
+    @State var criarPasta = false
 
-    
-    
-    //CoreData
     @Environment(\.managedObjectContext) var context //Contexto, DataController
     @ObservedObject var myDataController: MyDataController
-    @FetchRequest(sortDescriptors: []) var arquivos: FetchedResults<ArquivoPDF>
     
+    @FetchRequest var arquivos: FetchedResults<ArquivoPDF>
+    @FetchRequest var pastas: FetchedResults<Pasta2>
     
-    init(pasta: Pasta, context: NSManagedObjectContext) {
+    init(pasta: Pasta2 /*Pasta*/, context: NSManagedObjectContext) {
         self.pasta = pasta
         self.myDataController = MyDataController(context: context)
+        _arquivos = FetchRequest<ArquivoPDF>(
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "pasta == %@", pasta)
+        )
+        _pastas = FetchRequest<Pasta2>(
+            sortDescriptors: [],
+            predicate: NSPredicate(format: "parentPasta == %@", pasta)
+        )
     }
     
-    var pasta: Pasta
-    
+    var pasta: Pasta2
     let columns = [
         GridItem(.flexible(minimum: 90, maximum: 300)),
         GridItem(.flexible(minimum: 90, maximum: 300)),
         GridItem(.flexible(minimum: 90, maximum: 300)),
         GridItem(.flexible(minimum: 90, maximum: 300)),
-        
     ]
     
     let spacing: CGFloat = 20
@@ -51,43 +55,27 @@ struct PastaConteudoView: View {
             
             NavigationStack {
                 ScrollView {
-                    VStack{
+                    VStack {
                         LazyVGrid(columns: gridItems, spacing: spacing) {
-                            
-                            //Se houver alguma pasta
-                            if let pastas = pasta.pastas {
-                                ForEach(pastas) { pasta in
-                                    PastaIconeView(pasta: pasta)
-                                        .onTapGesture(count: 2) {
-                                            vm.abrirPasta(pasta: pasta)
-                                        }
-                                }
+                            ForEach(pastas, id: \.self) { subpasta in
+                                PastaIconeView(pasta: subpasta)
+                                    .onTapGesture(count: 2) {
+                                        vm.abrirPasta(pasta: subpasta)
+                                    }
                             }
                             
-                            //Se houver algum arquivo
-                            if let arquivos = pasta.arquivos {
-                                ForEach(arquivos) { arquivo in
-                                    ArquivoIconeView(arquivo: arquivo)
-                                        .onTapGesture(count: 2) {
-                                            vm.abrirArquivo(arquivo: arquivo)
-                                        }
-                                }
-                            }
-                            
-                            ForEach(arquivos) { arquivo in
-                                Button(action: {
-                                    arquivoSelecionado = arquivo
-                                    showPDF.toggle()
-                                }) {
-                                    Text(arquivo.nome!)
-                                }
+                            ForEach(arquivos, id: \.self) { arquivo in
+                                ArquivoIconeView(arquivoPDF: arquivo)
+                                    .onTapGesture(count: 2) {
+                                        arquivoSelecionado = arquivo
+                                        showPDF.toggle()
+                                    }
                             }
                         }
                         .padding()
                     }
                     
-                    //Se não houver nenhum arquivo ou pasta
-                    if pasta.pastas == nil && pasta.arquivos == nil {
+                    if pastas.isEmpty && arquivos.isEmpty {
                         Text("Pasta vazia!")
                             .font(.title)
                     }
@@ -95,24 +83,25 @@ struct PastaConteudoView: View {
                 .sheet(isPresented: $showPDF, content: {
                     ShowPDFView(arquivoSelecionado: $arquivoSelecionado)
                 })
+                .sheet(isPresented: $criarPasta, content: {
+                    CriarPastaView(pastaPai: self.pasta, context: context)
+                })
                 .navigationTitle(pasta.nome)
                 .toolbar {
-                    
+                    // Botão de voltar pasta!
                     ToolbarItem(placement: .navigation) {
-                        
                         Button(action: {
                             vm.fecharPasta()
                         }, label: {
                             Image(systemName: "chevron.left")
                         })
-                        .disabled(pasta.id == "0")
-                        
+                        .disabled(pasta.id == "raiz")
                     }
-                    
+                    // Botão para criar nova pasta ou importar arquivo
                     ToolbarItem(placement: .primaryAction) {
                         Menu {
                             Button(action: {
-                                
+                                criarPasta.toggle()
                             }, label: {
                                 Text("Nova Pasta")
                             })
@@ -122,17 +111,15 @@ struct PastaConteudoView: View {
                             }, label: {
                                 Text("Importar Arquivo")
                             })
+                        } label: {
+                            Image(systemName: "plus")
                         }
-                    label: {
-                        Image(systemName: "plus")
-                    }
                     }
                 }
             }
         }
     }
     
-    //Função para importar o pdf e salvar no CoreData
     func importPDF() {
         let openPanel = NSOpenPanel()
         openPanel.allowedContentTypes = [UTType.pdf]
@@ -146,19 +133,17 @@ struct PastaConteudoView: View {
                     let data = try Data(contentsOf: url)
                     let nome = url.lastPathComponent
                     
-                    //Savo no CoreData o PDF aberto!
-                    myDataController.savePDF(nome: nome, conteudo: data)
-                    
+                    // Salvo no CoreData o PDF aberto!
+                    myDataController.savePDF(pasta: self.pasta, nome: nome, conteudo: data)
                 } catch {
                     print("Failed to load data from URL: \(error.localizedDescription)")
                 }
             }
         }
     }
-    
 }
 
-#Preview {
-    PastaConteudoView(pasta: Pasta(nome: "Testes", pastas: Pastas.exemplos(), arquivos: Arquivos.exemplos()), context: DataController().container.viewContext)
-        .environmentObject(ViewModel())
-}
+//#Preview {
+//    PastaConteudoView(pasta: Pasta(nome: "Testes", pastas: Pastas.exemplos(), arquivos: Arquivos.exemplos()), context: DataController().container.viewContext)
+//        .environmentObject(ViewModel())
+//}
