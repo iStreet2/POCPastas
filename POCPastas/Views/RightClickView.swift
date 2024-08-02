@@ -30,7 +30,7 @@ struct RightClickView: NSViewRepresentable {
     func makeNSView(context: Context) -> NSView {
         let view = NSView()
         let rightClickGesture = NSClickGestureRecognizer(target: context.coordinator, action: #selector(Coordinator.rightClicked(_:)))
-        rightClickGesture.buttonMask = 0x2 // Right mouse button
+        rightClickGesture.buttonMask = 0x2
         view.addGestureRecognizer(rightClickGesture)
         return view
     }

@@ -17,7 +17,7 @@ struct ArquivoIconeView: View {
             Image(systemName: "doc")
                 .font(.system(size: 70))
             //Text(arquivo.nome)
-            Text(arquivoPDF.nome ?? "ArquivoSemNome")
+            Text(arquivoPDF.nome)
                 .lineLimit(2)
         }
     }
