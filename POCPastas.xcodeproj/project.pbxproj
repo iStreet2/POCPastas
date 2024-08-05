@@ -25,6 +25,8 @@
 		3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */; };
 		3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */; };
 		3B8D97282C5D31D900A6A2F8 /* CriarPastaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */; };
+		3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97292C61472A00A6A2F8 /* TesteView.swift */; };
+		3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +51,8 @@
 		3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarPastaView.swift; sourceTree = "<group>"; };
+		3B8D97292C61472A00A6A2F8 /* TesteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteView.swift; sourceTree = "<group>"; };
+		3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste2View.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +151,8 @@
 				3B45190F2C596BE700FCC155 /* Pasta */,
 				3B45190E2C596BDD00FCC155 /* Arquivo */,
 				3B83F5A62C5AD53000E31ECB /* RightClickView.swift */,
+				3B8D97292C61472A00A6A2F8 /* TesteView.swift */,
+				3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -242,6 +248,7 @@
 				3B4519182C597D1200FCC155 /* ViewModel.swift in Sources */,
 				3B83F5A72C5AD53000E31ECB /* RightClickView.swift in Sources */,
 				3B4519162C597BDC00FCC155 /* PastaIconeView.swift in Sources */,
+				3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */,
 				3B4518F72C59673200FCC155 /* ContentView.swift in Sources */,
 				3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */,
 				3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */,
@@ -252,6 +259,7 @@
 				3B4518F52C59673200FCC155 /* POCPastasApp.swift in Sources */,
 				3B4519112C596BF100FCC155 /* PastaConteudoView.swift in Sources */,
 				3B235A152C5BFF7E00F679FC /* DataController.swift in Sources */,
+				3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */,
 				3B235A0E2C5BF4E500F679FC /* ShowPDFView.swift in Sources */,
 				3B45191C2C5AA44F00FCC155 /* Pilha.swift in Sources */,
 				3B235A0C2C5BF45700F679FC /* PDFKitView.swift in Sources */,

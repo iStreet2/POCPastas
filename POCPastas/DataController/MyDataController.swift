@@ -75,6 +75,16 @@ class MyDataController: ObservableObject {
         saveContext()
     }
     
+    func movePasta(pastaPai: Pasta2, pastaMovendo: Pasta2, pastaDestino: Pasta2) {
+        //Pasta pai perde a pasta movendo
+        pastaPai.removeFromPastas(pastaMovendo)
+        //Pasta movendo perde a referencia de pasta pai e recebe pasta destino como novo pai
+        pastaMovendo.parentPasta = pastaDestino
+        //Pasta destino recebe pasta movendo como filho
+        pastaDestino.addToPastas(pastaMovendo)
+        saveContext()
+    }
+    
     func saveContext() {
         do{
             try context.save()

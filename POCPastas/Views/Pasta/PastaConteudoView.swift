@@ -38,12 +38,6 @@ struct PastaConteudoView: View {
     }
     
     var pasta: Pasta2
-    let columns = [
-        GridItem(.flexible(minimum: 90, maximum: 300)),
-        GridItem(.flexible(minimum: 90, maximum: 300)),
-        GridItem(.flexible(minimum: 90, maximum: 300)),
-        GridItem(.flexible(minimum: 90, maximum: 300)),
-    ]
     
     let spacing: CGFloat = 20
     let itemWidth: CGFloat = 100
@@ -59,6 +53,28 @@ struct PastaConteudoView: View {
                         LazyVGrid(columns: gridItems, spacing: spacing) {
                             ForEach(pastas, id: \.self) { subpasta in
                                 PastaIconeView(pasta: subpasta)
+                                    .contextMenu {
+                                        Button(action: {
+                                            // Ação para abrir o arquivo
+                                        }) {
+                                            Text("Abrir Arquivo")
+                                            Image(systemName: "doc.text")
+                                        }
+                                        
+                                        Button(action: {
+                                            // Ação para renomear o arquivo
+                                        }) {
+                                            Text("Renomear")
+                                            Image(systemName: "pencil")
+                                        }
+                                        
+                                        Button(action: {
+                                            // Ação para excluir o arquivo
+                                        }) {
+                                            Text("Excluir")
+                                            Image(systemName: "trash")
+                                        }
+                                    }
                                     .onTapGesture(count: 2) {
                                         vm.abrirPasta(pasta: subpasta)
                                     }
@@ -66,6 +82,28 @@ struct PastaConteudoView: View {
                             
                             ForEach(arquivos, id: \.self) { arquivo in
                                 ArquivoIconeView(arquivoPDF: arquivo)
+                                    .contextMenu {
+                                        Button(action: {
+                                            // Ação para abrir o arquivo
+                                        }) {
+                                            Text("Abrir Arquivo")
+                                            Image(systemName: "doc.text")
+                                        }
+                                        
+                                        Button(action: {
+                                            // Ação para renomear o arquivo
+                                        }) {
+                                            Text("Renomear")
+                                            Image(systemName: "pencil")
+                                        }
+                                        
+                                        Button(action: {
+                                            // Ação para excluir o arquivo
+                                        }) {
+                                            Text("Excluir")
+                                            Image(systemName: "trash")
+                                        }
+                                    }
                                     .onTapGesture(count: 2) {
                                         arquivoSelecionado = arquivo
                                         showPDF.toggle()
@@ -131,6 +169,7 @@ struct PastaConteudoView: View {
                 do {
                     let data = try Data(contentsOf: url)
                     let nome = url.lastPathComponent
+                    print(url)
                     
                     // Salvo no CoreData o PDF aberto!
                     myDataController.savePDF(pasta: self.pasta, nome: nome, conteudo: data)
