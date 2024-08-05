@@ -17,6 +17,7 @@ struct PastaConteudoView: View {
     @State var arquivoSelecionado: ArquivoPDF?
     @State var showPDF = false
     @State var criarPasta = false
+    @State var offset = CGSize.zero
 
     @Environment(\.managedObjectContext) var context //Contexto, DataController
     @ObservedObject var myDataController: MyDataController
@@ -53,6 +54,19 @@ struct PastaConteudoView: View {
                         LazyVGrid(columns: gridItems, spacing: spacing) {
                             ForEach(pastas, id: \.self) { subpasta in
                                 PastaIconeView(pasta: subpasta)
+                                    .offset(x: offset.width, y: offset.height)
+                                    .gesture(
+                                        DragGesture()
+                                            .onChanged { gesture in
+                                                offset = gesture.translation
+                                            }
+                                            .onEnded { _ in
+                                                withAnimation(.bouncy){
+                                                    offset = .zero
+                                                }
+                                            }
+                                    )
+                                    .capturePosition(id: subpasta.id ?? "error")
                                     .contextMenu {
                                         Button(action: {
                                             // Ação para abrir o arquivo
@@ -77,6 +91,19 @@ struct PastaConteudoView: View {
                                     }
                                     .onTapGesture(count: 2) {
                                         vm.abrirPasta(pasta: subpasta)
+                                    }
+                                    
+                                    
+                                    //Modificador para popular a posição das pastas
+                                    .onPreferenceChange(ViewPositionKey.self) { positions in
+                                        //para cada posição nas posições
+                                        for position in positions {
+                                            if subpasta.id == position.key {
+                                                subpasta.positionX = Float(position.value.x)
+                                                subpasta.positionY = Float(position.value.y)
+                                            }
+                                            print("posição do \(subpasta.nome) é x: \(subpasta.positionX) y: \(subpasta.positionY)")
+                                        }
                                     }
                             }
                             

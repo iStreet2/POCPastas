@@ -24,10 +24,9 @@ struct DragGestureView: View {
                             offset = gesture.translation
                         }
                         .onEnded { _ in
-                            withAnimation(.bouncy(duration: 0.2, extraBounce: 0.2)){
+                            withAnimation(.bouncy){
                                 offset = .zero
                             }
-                            
                         }
                 )
                 .padding(60)

@@ -85,6 +85,16 @@ class MyDataController: ObservableObject {
         saveContext()
     }
     
+    func moveArquivo(pastaPai: Pasta2, arquivoMovendo: ArquivoPDF, pastaDestino: Pasta2) {
+        //Pasta pai perde o arquivo movendo
+        pastaPai.removeFromArquivosPDF(arquivoMovendo)
+        //Arquivo movendo perde a referencia de pasta pai e recebe pasta destino como novo pai
+        arquivoMovendo.pasta = pastaDestino
+        //Pasta destino recebe arquivo movendo como filho
+        pastaDestino.addToArquivosPDF(arquivoMovendo)
+        saveContext()
+    }
+    
     func saveContext() {
         do{
             try context.save()

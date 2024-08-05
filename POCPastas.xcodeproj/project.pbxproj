@@ -12,6 +12,10 @@
 		3B235A132C5BFED900F679FC /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3B235A112C5BFED900F679FC /* Model.xcdatamodeld */; };
 		3B235A152C5BFF7E00F679FC /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235A142C5BFF7E00F679FC /* DataController.swift */; };
 		3B235A172C5BFF9400F679FC /* MyDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B235A162C5BFF9400F679FC /* MyDataController.swift */; };
+		3B3C07D22C6168E0001F7480 /* Pasta2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C07CE2C6168E0001F7480 /* Pasta2+CoreDataClass.swift */; };
+		3B3C07D32C6168E0001F7480 /* Pasta2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C07CF2C6168E0001F7480 /* Pasta2+CoreDataProperties.swift */; };
+		3B3C07D42C6168E0001F7480 /* ArquivoPDF+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C07D02C6168E0001F7480 /* ArquivoPDF+CoreDataClass.swift */; };
+		3B3C07D52C6168E0001F7480 /* ArquivoPDF+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B3C07D12C6168E0001F7480 /* ArquivoPDF+CoreDataProperties.swift */; };
 		3B4518F52C59673200FCC155 /* POCPastasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4518F42C59673200FCC155 /* POCPastasApp.swift */; };
 		3B4518F72C59673200FCC155 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4518F62C59673200FCC155 /* ContentView.swift */; };
 		3B4518F92C59673400FCC155 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B4518F82C59673400FCC155 /* Assets.xcassets */; };
@@ -22,8 +26,6 @@
 		3B4519182C597D1200FCC155 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4519172C597D1200FCC155 /* ViewModel.swift */; };
 		3B45191C2C5AA44F00FCC155 /* Pilha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45191B2C5AA44F00FCC155 /* Pilha.swift */; };
 		3B83F5A72C5AD53000E31ECB /* RightClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83F5A62C5AD53000E31ECB /* RightClickView.swift */; };
-		3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */; };
-		3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */; };
 		3B8D97282C5D31D900A6A2F8 /* CriarPastaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */; };
 		3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97292C61472A00A6A2F8 /* TesteView.swift */; };
 		3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */; };
@@ -36,6 +38,10 @@
 		3B235A122C5BFED900F679FC /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		3B235A142C5BFF7E00F679FC /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3B235A162C5BFF9400F679FC /* MyDataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDataController.swift; sourceTree = "<group>"; };
+		3B3C07CE2C6168E0001F7480 /* Pasta2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3B3C07CF2C6168E0001F7480 /* Pasta2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3B3C07D02C6168E0001F7480 /* ArquivoPDF+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3B3C07D12C6168E0001F7480 /* ArquivoPDF+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		3B4518F12C59673200FCC155 /* POCPastas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = POCPastas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B4518F42C59673200FCC155 /* POCPastasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = POCPastasApp.swift; sourceTree = "<group>"; };
 		3B4518F62C59673200FCC155 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -48,8 +54,6 @@
 		3B4519172C597D1200FCC155 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3B45191B2C5AA44F00FCC155 /* Pilha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilha.swift; sourceTree = "<group>"; };
 		3B83F5A62C5AD53000E31ECB /* RightClickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightClickView.swift; sourceTree = "<group>"; };
-		3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarPastaView.swift; sourceTree = "<group>"; };
 		3B8D97292C61472A00A6A2F8 /* TesteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteView.swift; sourceTree = "<group>"; };
 		3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste2View.swift; sourceTree = "<group>"; };
@@ -129,8 +133,10 @@
 		3B4519032C59681A00FCC155 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */,
-				3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */,
+				3B3C07CE2C6168E0001F7480 /* Pasta2+CoreDataClass.swift */,
+				3B3C07CF2C6168E0001F7480 /* Pasta2+CoreDataProperties.swift */,
+				3B3C07D02C6168E0001F7480 /* ArquivoPDF+CoreDataClass.swift */,
+				3B3C07D12C6168E0001F7480 /* ArquivoPDF+CoreDataProperties.swift */,
 				3B45191B2C5AA44F00FCC155 /* Pilha.swift */,
 			);
 			path = Model;
@@ -250,13 +256,15 @@
 				3B4519162C597BDC00FCC155 /* PastaIconeView.swift in Sources */,
 				3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */,
 				3B4518F72C59673200FCC155 /* ContentView.swift in Sources */,
-				3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */,
-				3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */,
 				3B8D97282C5D31D900A6A2F8 /* CriarPastaView.swift in Sources */,
 				3B45190B2C59699400FCC155 /* ArquivoIconeView.swift in Sources */,
 				3B235A172C5BFF9400F679FC /* MyDataController.swift in Sources */,
 				3B235A132C5BFED900F679FC /* Model.xcdatamodeld in Sources */,
 				3B4518F52C59673200FCC155 /* POCPastasApp.swift in Sources */,
+				3B3C07D22C6168E0001F7480 /* Pasta2+CoreDataClass.swift in Sources */,
+				3B3C07D32C6168E0001F7480 /* Pasta2+CoreDataProperties.swift in Sources */,
+				3B3C07D42C6168E0001F7480 /* ArquivoPDF+CoreDataClass.swift in Sources */,
+				3B3C07D52C6168E0001F7480 /* ArquivoPDF+CoreDataProperties.swift in Sources */,
 				3B4519112C596BF100FCC155 /* PastaConteudoView.swift in Sources */,
 				3B235A152C5BFF7E00F679FC /* DataController.swift in Sources */,
 				3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */,
