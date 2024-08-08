@@ -2,7 +2,7 @@
 //  Pasta2+CoreDataProperties.swift
 //  POCPastas
 //
-//  Created by Gabriel Vicentin Negro on 05/08/24.
+//  Created by Gabriel Vicentin Negro on 08/08/24.
 //
 //
 
@@ -16,10 +16,8 @@ extension Pasta2 {
         return NSFetchRequest<Pasta2>(entityName: "Pasta2")
     }
 
-    @NSManaged public var id: String?
+    @NSManaged public var id: String
     @NSManaged public var nome: String
-    @NSManaged public var positionX: Float
-    @NSManaged public var positionY: Float
     @NSManaged public var arquivosPDF: NSSet?
     @NSManaged public var parentPasta: Pasta2?
     @NSManaged public var pastas: NSSet?

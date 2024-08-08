@@ -2,7 +2,7 @@
 //  ArquivoPDF+CoreDataProperties.swift
 //  POCPastas
 //
-//  Created by Gabriel Vicentin Negro on 05/08/24.
+//  Created by Gabriel Vicentin Negro on 08/08/24.
 //
 //
 
@@ -17,10 +17,8 @@ extension ArquivoPDF {
     }
 
     @NSManaged public var conteudo: Data?
-    @NSManaged public var id: UUID?
+    @NSManaged public var id: String
     @NSManaged public var nome: String
-    @NSManaged public var positionX: Float
-    @NSManaged public var positionY: Float
     @NSManaged public var pasta: Pasta2?
 
 }

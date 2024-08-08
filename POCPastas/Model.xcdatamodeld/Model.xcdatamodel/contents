@@ -2,17 +2,13 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22758" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
     <entity name="ArquivoPDF" representedClassName="ArquivoPDF" syncable="YES">
         <attribute name="conteudo" optional="YES" attributeType="Binary"/>
-        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="String"/>
         <attribute name="nome" attributeType="String"/>
-        <attribute name="positionX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="positionY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="pasta" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pasta2" inverseName="arquivosPDF" inverseEntity="Pasta2"/>
     </entity>
     <entity name="Pasta2" representedClassName="Pasta2" syncable="YES">
         <attribute name="id" attributeType="String"/>
         <attribute name="nome" attributeType="String"/>
-        <attribute name="positionX" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
-        <attribute name="positionY" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="arquivosPDF" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ArquivoPDF" inverseName="pasta" inverseEntity="ArquivoPDF"/>
         <relationship name="parentPasta" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Pasta2" inverseName="pastas" inverseEntity="Pasta2"/>
         <relationship name="pastas" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pasta2" inverseName="parentPasta" inverseEntity="Pasta2"/>

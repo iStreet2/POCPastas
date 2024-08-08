@@ -2,7 +2,7 @@
 //  Pasta2+CoreDataClass.swift
 //  POCPastas
 //
-//  Created by Gabriel Vicentin Negro on 05/08/24.
+//  Created by Gabriel Vicentin Negro on 08/08/24.
 //
 //
 

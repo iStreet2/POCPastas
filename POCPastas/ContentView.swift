@@ -9,9 +9,10 @@ import SwiftUI
 
 struct ContentView: View {
     
+    //MARK: ViewModel
     @EnvironmentObject var vm: ViewModel
     
-    //CoreData
+    //MARK: CoreData
     @Environment(\.managedObjectContext) var context //Contexto, DataController
     @ObservedObject var myDataController: MyDataController
     @FetchRequest(sortDescriptors: []) var arquivos: FetchedResults<ArquivoPDF>
@@ -24,33 +25,35 @@ struct ContentView: View {
     
     
     var body: some View {
-        ZStack {
-            VStack{
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack{
-                        ForEach(vm.caminho.getItens()) { item in
-                            HStack {
-                                Text("\(item.nome)")
-                                Image(systemName: "chevron.right")
-                            }
+        VStack{
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack{
+                    ForEach(vm.caminho.getItens()) { item in
+                        HStack {
+                            Text("\(item.nome)")
+                            Image(systemName: "chevron.right")
                         }
                     }
                 }
-                .padding()
-                
-                //Se houver uma pasta aberta
-                if let pastaAberta = vm.pastaAberta {
-                    PastaConteudoView(pasta: pastaAberta, context: context)
-                }
+            }
+            .padding()
             
-                Button {
-                    self.myDataController.apagarTodosOsItens()
-                } label: {
-                    Text("Apagar tudo!")
-                }
+            //Se houver uma pasta aberta
+            if let pastaAberta = vm.pastaAberta {
+                PastaConteudoView(pasta: pastaAberta, context: context)
+            }
+            
+            Button {
+                self.myDataController.apagarTodosOsItens()
+            } label: {
+                Text("Apagar tudo!")
             }
         }
+        
         .onAppear {
+            
+            
+            
             if pastas[0].id == "raiz" {
                 let pastaRaiz = pastas[0]
                 vm.pastaAberta = pastaRaiz
@@ -61,7 +64,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView(context: DataController().container.viewContext)
-        .environmentObject(ViewModel())
-}
+//#Preview {
+//    ContentView(context: DataController().container.viewContext)
+//        .environmentObject(ViewModel())
+//}

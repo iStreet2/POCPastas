@@ -16,6 +16,7 @@ class MyDataController: ObservableObject {
     init(context: NSManagedObjectContext){
         self.context = context
         initSettings()
+
     }
     
     //Se for a primeira vez que o usuário abre o app, a pasta raiz sera criada
@@ -28,19 +29,7 @@ class MyDataController: ObservableObject {
         
     }
     
-    func savePDF(pasta: Pasta2, nome: String, conteudo: Data) {
-        let novoPDF = ArquivoPDF(context: context)
-        novoPDF.id = UUID()
-        novoPDF.nome = nome
-        novoPDF.conteudo = conteudo
-        novoPDF.pasta = pasta  // Estabelecendo a referência à pasta pai
-        
-        // Adiciona o novo arquivo ao conjunto de arquivos da pasta pai
-        pasta.addToArquivosPDF(novoPDF)
-        
-        saveContext()
-    }
-
+    //MARK: Funções para pastas
     
     func criarRaiz(nome: String) {
         let novaPasta = Pasta2(context: context)
@@ -62,16 +51,17 @@ class MyDataController: ObservableObject {
         saveContext()
     }
     
-    func deletePDF(pastaPai: Pasta2, arquivoPDF: ArquivoPDF) {
-        pastaPai.removeFromArquivosPDF(arquivoPDF)
-        saveContext()
-        context.delete(arquivoPDF)
+    func deletePasta(pastaPai: Pasta2, pasta: Pasta2) {
+        //Removo essa pasta de sua pasta pai
+        pastaPai.removeFromPastas(pasta)
+        //Apago essa pasta do contexto
+        context.delete(pasta)
+        //Salvo o contexto
         saveContext()
     }
     
-    func deletePasta(pastaPai: Pasta2, pasta: Pasta2) {
-        pastaPai.removeFromPastas(pasta)
-        context.delete(pasta)
+    func editPasta(pasta: Pasta2, nome: String) {
+        pasta.nome = nome
         saveContext()
     }
     
@@ -85,6 +75,34 @@ class MyDataController: ObservableObject {
         saveContext()
     }
     
+    //MARK: Funções para arquivos
+    
+    func savePDF(pasta: Pasta2, nome: String, conteudo: Data) {
+        let novoPDF = ArquivoPDF(context: context)
+        novoPDF.id = UUID().uuidString
+        novoPDF.nome = nome
+        novoPDF.conteudo = conteudo
+        novoPDF.pasta = pasta  // Estabelecendo a referência à pasta pai
+        
+        // Adiciona o novo arquivo ao conjunto de arquivos da pasta pai
+        pasta.addToArquivosPDF(novoPDF)
+        
+        saveContext()
+    }
+    
+    func deletePDF(pastaPai: Pasta2, arquivoPDF: ArquivoPDF) {
+        pastaPai.removeFromArquivosPDF(arquivoPDF)
+        context.delete(arquivoPDF)
+        saveContext()
+    }
+    
+    func editPDF(arquivoPDF: ArquivoPDF, nome: String) {
+        arquivoPDF.nome = nome
+        saveContext()
+    }
+    
+    
+    
     func moveArquivo(pastaPai: Pasta2, arquivoMovendo: ArquivoPDF, pastaDestino: Pasta2) {
         //Pasta pai perde o arquivo movendo
         pastaPai.removeFromArquivosPDF(arquivoMovendo)
@@ -94,6 +112,8 @@ class MyDataController: ObservableObject {
         pastaDestino.addToArquivosPDF(arquivoMovendo)
         saveContext()
     }
+    
+    //MARK: Funções gerais
     
     func saveContext() {
         do{

@@ -10,7 +10,7 @@ import SwiftUI
 struct ArquivoIconeView: View {
     
     //var arquivo: Arquivo
-    var arquivoPDF: ArquivoPDF
+    @ObservedObject var arquivoPDF: ArquivoPDF
     
     var body: some View {
         VStack{
