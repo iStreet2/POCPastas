@@ -29,7 +29,7 @@ class ViewModel: ObservableObject {
         withAnimation(.easeIn(duration: 0.1)) {
             // Retiro a ultima pasta do meu caminho
             let ultimaPasta = caminho.pop()
-            print(ultimaPasta)
+            //print(ultimaPasta)
             // A pasta aberta vira o agora topo da pilha
             self.pastaAberta = caminho.top()
         }

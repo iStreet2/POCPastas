@@ -22,11 +22,14 @@
 		3B4519182C597D1200FCC155 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B4519172C597D1200FCC155 /* ViewModel.swift */; };
 		3B45191C2C5AA44F00FCC155 /* Pilha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B45191B2C5AA44F00FCC155 /* Pilha.swift */; };
 		3B83F5A72C5AD53000E31ECB /* RightClickView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B83F5A62C5AD53000E31ECB /* RightClickView.swift */; };
-		3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */; };
-		3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */; };
 		3B8D97282C5D31D900A6A2F8 /* CriarPastaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */; };
 		3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D97292C61472A00A6A2F8 /* TesteView.swift */; };
-		3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */; };
+		3BD1B0ED2C6529AD00237497 /* ArquivoPDF+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1B0E92C6529AD00237497 /* ArquivoPDF+CoreDataClass.swift */; };
+		3BD1B0EE2C6529AD00237497 /* ArquivoPDF+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1B0EA2C6529AD00237497 /* ArquivoPDF+CoreDataProperties.swift */; };
+		3BD1B0EF2C6529AD00237497 /* Pasta2+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1B0EB2C6529AD00237497 /* Pasta2+CoreDataClass.swift */; };
+		3BD1B0F02C6529AD00237497 /* Pasta2+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BD1B0EC2C6529AD00237497 /* Pasta2+CoreDataProperties.swift */; };
+		3BE0EA4B2C65513800D4373F /* EditarPastaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0EA4A2C65513800D4373F /* EditarPastaView.swift */; };
+		3BE0EA4D2C6556CE00D4373F /* EditarArquivoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BE0EA4C2C6556CE00D4373F /* EditarArquivoView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,11 +51,14 @@
 		3B4519172C597D1200FCC155 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 		3B45191B2C5AA44F00FCC155 /* Pilha.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pilha.swift; sourceTree = "<group>"; };
 		3B83F5A62C5AD53000E31ECB /* RightClickView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RightClickView.swift; sourceTree = "<group>"; };
-		3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataClass.swift"; sourceTree = "<group>"; };
-		3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataClass.swift"; sourceTree = "<group>"; };
 		3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CriarPastaView.swift; sourceTree = "<group>"; };
 		3B8D97292C61472A00A6A2F8 /* TesteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TesteView.swift; sourceTree = "<group>"; };
-		3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Teste2View.swift; sourceTree = "<group>"; };
+		3BD1B0E92C6529AD00237497 /* ArquivoPDF+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3BD1B0EA2C6529AD00237497 /* ArquivoPDF+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ArquivoPDF+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3BD1B0EB2C6529AD00237497 /* Pasta2+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3BD1B0EC2C6529AD00237497 /* Pasta2+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pasta2+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3BE0EA4A2C65513800D4373F /* EditarPastaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarPastaView.swift; sourceTree = "<group>"; };
+		3BE0EA4C2C6556CE00D4373F /* EditarArquivoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditarArquivoView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,8 +135,10 @@
 		3B4519032C59681A00FCC155 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3B8D971F2C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift */,
-				3B8D97212C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift */,
+				3BD1B0E92C6529AD00237497 /* ArquivoPDF+CoreDataClass.swift */,
+				3BD1B0EA2C6529AD00237497 /* ArquivoPDF+CoreDataProperties.swift */,
+				3BD1B0EB2C6529AD00237497 /* Pasta2+CoreDataClass.swift */,
+				3BD1B0EC2C6529AD00237497 /* Pasta2+CoreDataProperties.swift */,
 				3B45191B2C5AA44F00FCC155 /* Pilha.swift */,
 			);
 			path = Model;
@@ -152,7 +160,6 @@
 				3B45190E2C596BDD00FCC155 /* Arquivo */,
 				3B83F5A62C5AD53000E31ECB /* RightClickView.swift */,
 				3B8D97292C61472A00A6A2F8 /* TesteView.swift */,
-				3B8D972B2C615E2500A6A2F8 /* Teste2View.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -161,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				3B45190A2C59699400FCC155 /* ArquivoIconeView.swift */,
+				3BE0EA4C2C6556CE00D4373F /* EditarArquivoView.swift */,
 			);
 			path = Arquivo;
 			sourceTree = "<group>";
@@ -171,6 +179,7 @@
 				3B4519102C596BF100FCC155 /* PastaConteudoView.swift */,
 				3B4519152C597BDC00FCC155 /* PastaIconeView.swift */,
 				3B8D97272C5D31D900A6A2F8 /* CriarPastaView.swift */,
+				3BE0EA4A2C65513800D4373F /* EditarPastaView.swift */,
 			);
 			path = Pasta;
 			sourceTree = "<group>";
@@ -245,13 +254,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3BE0EA4B2C65513800D4373F /* EditarPastaView.swift in Sources */,
 				3B4519182C597D1200FCC155 /* ViewModel.swift in Sources */,
 				3B83F5A72C5AD53000E31ECB /* RightClickView.swift in Sources */,
+				3BE0EA4D2C6556CE00D4373F /* EditarArquivoView.swift in Sources */,
 				3B4519162C597BDC00FCC155 /* PastaIconeView.swift in Sources */,
-				3B8D972C2C615E2500A6A2F8 /* Teste2View.swift in Sources */,
 				3B4518F72C59673200FCC155 /* ContentView.swift in Sources */,
-				3B8D97232C5D28BC00A6A2F8 /* ArquivoPDF+CoreDataClass.swift in Sources */,
-				3B8D97252C5D28BC00A6A2F8 /* Pasta2+CoreDataClass.swift in Sources */,
 				3B8D97282C5D31D900A6A2F8 /* CriarPastaView.swift in Sources */,
 				3B45190B2C59699400FCC155 /* ArquivoIconeView.swift in Sources */,
 				3B235A172C5BFF9400F679FC /* MyDataController.swift in Sources */,
@@ -260,6 +268,10 @@
 				3B4519112C596BF100FCC155 /* PastaConteudoView.swift in Sources */,
 				3B235A152C5BFF7E00F679FC /* DataController.swift in Sources */,
 				3B8D972A2C61472A00A6A2F8 /* TesteView.swift in Sources */,
+				3BD1B0ED2C6529AD00237497 /* ArquivoPDF+CoreDataClass.swift in Sources */,
+				3BD1B0EE2C6529AD00237497 /* ArquivoPDF+CoreDataProperties.swift in Sources */,
+				3BD1B0EF2C6529AD00237497 /* Pasta2+CoreDataClass.swift in Sources */,
+				3BD1B0F02C6529AD00237497 /* Pasta2+CoreDataProperties.swift in Sources */,
 				3B235A0E2C5BF4E500F679FC /* ShowPDFView.swift in Sources */,
 				3B45191C2C5AA44F00FCC155 /* Pilha.swift in Sources */,
 				3B235A0C2C5BF45700F679FC /* PDFKitView.swift in Sources */,
@@ -407,6 +419,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielvicentinnegro.POCPastas;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +448,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gabrielvicentinnegro.POCPastas;
 				PRODUCT_NAME = "$(TARGET_NAME)";

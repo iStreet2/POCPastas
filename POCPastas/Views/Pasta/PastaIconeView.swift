@@ -10,7 +10,7 @@ import SwiftUI
 struct PastaIconeView: View {
     
     //var pasta: Pasta
-    var pasta: Pasta2
+    @ObservedObject var pasta: Pasta2
     
     var body: some View {
         VStack{
