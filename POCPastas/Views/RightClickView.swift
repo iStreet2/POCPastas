@@ -8,6 +8,7 @@
 
 import SwiftUI
 
+#if os(macOS)
 struct RightClickView: NSViewRepresentable {
     var onRightClick: () -> Void
 
@@ -37,3 +38,4 @@ struct RightClickView: NSViewRepresentable {
 
     func updateNSView(_ nsView: NSView, context: Context) {}
 }
+#endif

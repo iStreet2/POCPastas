@@ -8,7 +8,7 @@
 import SwiftUI
 import PDFKit
 import UniformTypeIdentifiers
-
+import CoreData
 
 struct PastaConteudoView: View {
     
@@ -347,25 +347,25 @@ struct PastaConteudoView: View {
     }
     
     func importPDF() {
-        let openPanel = NSOpenPanel()
-        openPanel.allowedContentTypes = [UTType.pdf]
-        openPanel.allowsMultipleSelection = false
-        openPanel.canChooseDirectories = false
-        
-        openPanel.begin { response in
-            if response == .OK, let url = openPanel.url {
-                do {
-                    let data = try Data(contentsOf: url)
-                    let nome = url.lastPathComponent
-                    print(url)
-                    
-                    // Salvo no CoreData o PDF aberto!
-                    myDataController.savePDF(pasta: self.pasta, nome: nome, conteudo: data)
-                } catch {
-                    print("Failed to load data from URL: \(error.localizedDescription)")
-                }
-            }
-        }
+//        let openPanel = NSOpenPanel()
+//        openPanel.allowedContentTypes = [UTType.pdf]
+//        openPanel.allowsMultipleSelection = false
+//        openPanel.canChooseDirectories = false
+//        
+//        openPanel.begin { response in
+//            if response == .OK, let url = openPanel.url {
+//                do {
+//                    let data = try Data(contentsOf: url)
+//                    let nome = url.lastPathComponent
+//                    print(url)
+//                    
+//                    // Salvo no CoreData o PDF aberto!
+//                    myDataController.savePDF(pasta: self.pasta, nome: nome, conteudo: data)
+//                } catch {
+//                    print("Failed to load data from URL: \(error.localizedDescription)")
+//                }
+//            }
+//        }
     }
 
 

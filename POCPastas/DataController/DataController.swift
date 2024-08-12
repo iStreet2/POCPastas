@@ -11,10 +11,10 @@ import CoreData
 class DataController: ObservableObject {
     
     let container = NSPersistentContainer(name: "Model")
-    
+//    let container = NSPersistentCloudKitContainer(name: "Model")
     
     init() {
-        
+//        
 //        if let storeURL = container.persistentStoreDescriptions.first?.url {
 //            do {
 //                try container.persistentStoreCoordinator.destroyPersistentStore(at: storeURL, ofType: NSSQLiteStoreType, options: nil)

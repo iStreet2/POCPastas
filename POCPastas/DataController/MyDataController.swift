@@ -15,6 +15,7 @@ class MyDataController: ObservableObject {
     
     init(context: NSManagedObjectContext){
         self.context = context
+        self.context.automaticallyMergesChangesFromParent = true
         initSettings()
 
     }
